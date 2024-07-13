@@ -11,9 +11,9 @@ export function SettingsTabs() {
     <Tabs.Root value={currentTab} onValueChange={setCurrentTab}>
       <Tabs.List className="mt-6 flex w-full items-center gap-4 border-b border-zinc-200">
         <TabItem
-          value="my_details"
+          value="my-details"
           title="My details"
-          isSelected={currentTab === 'my_details'}
+          isSelected={currentTab === 'my-details'}
         />
         <TabItem
           value="profile"
