@@ -9,13 +9,13 @@ export interface TabItemProps {
   isSelected?: boolean
 }
 
-export function TabItem({ title, value, isSelected = false }: TabItemProps) {
+export function TabItem({ title, value, isSelected }: TabItemProps) {
   return (
     <Tabs.Trigger
       value={value}
-      className="group relative px-1 pb-4 text-sm font-medium text-zinc-500 outline-none hover:text-violet-700 data-[state=active]:text-violet-700"
+      className="font-mediu group relative px-1 pb-4 text-sm leading-5 text-zinc-500 outline-none data-[state=active]:text-violet-700 hover:text-violet-700 dark:text-zinc-400 dark:data-[state=active]:text-zinc-100 dark:hover:text-zinc-100"
     >
-      <span className="whitespace-nowrap rounded group-focus-visible:ring-2 group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4 dark:text-zinc-400 dark:hover:text-violet-300 dark:data-[state=active]:text-violet-300">
+      <span className="whitespace-nowrap rounded group-focus-visible:ring-2 group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4">
         {title}
       </span>
 
