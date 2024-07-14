@@ -10,7 +10,7 @@ export function UsedSpaceWidget() {
         </p>
       </div>
 
-      <div className="h2 rounded-full bg-violet-100 dark:bg-zinc-600">
+      <div className="h-2 rounded-full bg-violet-100 dark:bg-zinc-600">
         <div className="h-2 w-4/5 rounded-full bg-violet-600 dark:bg-violet-400" />
       </div>
 

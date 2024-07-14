@@ -7,7 +7,7 @@ export function Profile() {
     <div className="flex items-center gap-3">
       <img
         src="https://github.com/edu-almeidaf.png"
-        className="h-10 w-10 rounded-full"
+        className="size-10 rounded-full"
         alt=""
       />
       <div className="flex flex-1 flex-col overflow-hidden">
