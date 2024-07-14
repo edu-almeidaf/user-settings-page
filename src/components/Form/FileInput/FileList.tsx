@@ -7,6 +7,11 @@ import { FileItem } from './FileItem'
 export function FileList() {
   const { files } = useFileInput()
   const [parent] = useAutoAnimate()
+
+  if (!files.length) {
+    return null
+  }
+
   return (
     <div ref={parent} className="mt-4 space-y-3">
       {files.map((file) => {

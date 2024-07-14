@@ -6,6 +6,7 @@ import {
   useId,
   useState,
 } from 'react'
+import { twMerge } from 'tailwind-merge'
 
 export interface RootProps extends ComponentProps<'div'> {}
 
@@ -32,7 +33,7 @@ export function Root(props: RootProps) {
 
   return (
     <FileInputContext.Provider value={{ id, files, onFilesSelected }}>
-      <div {...props} />
+      <div {...props} className={twMerge('group w-full', props.className)} />
     </FileInputContext.Provider>
   )
 }

@@ -2,10 +2,10 @@ import { SettingsTabs } from '@/components/SettingsTabs'
 import * as Input from '@/components/Input'
 import * as FileInput from '@/components/Form/FileInput'
 import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
-import { Select } from '@/components/Form/Select'
-import { SelectItem } from '@/components/Form/Select/SelectItem'
+import * as Select from '@/components/Form/Select'
 import { Textarea } from '@/components/Form/Textarea'
 import { Button } from '@/components/Button'
+import { CountrySelect } from './CountrySelect'
 
 export default function Home() {
   return (
@@ -124,10 +124,7 @@ export default function Home() {
             >
               Country
             </label>
-            <Select placeholder="Select a country...">
-              <SelectItem value="br" text="Brazil" />
-              <SelectItem value="us" text="United States" />
-            </Select>
+            <CountrySelect />
           </div>
 
           <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
@@ -137,13 +134,20 @@ export default function Home() {
             >
               Timezone
             </label>
-            <Select placeholder="Select a timezone...">
-              <SelectItem
-                value="utc8"
-                text="Pacific Standard Time (UTC-08:00)"
-              />
-              <SelectItem value="utc3" text="América São Paulo (UTC-03:00)" />
-            </Select>
+            <Select.Root name="timezone">
+              <Select.Trigger>
+                <Select.Value placeholder="Select your timezone..." />
+              </Select.Trigger>
+
+              <Select.Content>
+                <Select.Item value="utc-3">
+                  <Select.ItemText>
+                    Pacific Standard Time (PST)
+                    <span className="text-sm text-zinc-500">UTC 08:00</span>
+                  </Select.ItemText>
+                </Select.Item>
+              </Select.Content>
+            </Select.Root>
           </div>
 
           <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
@@ -158,10 +162,20 @@ export default function Home() {
             </label>
             <div className="space-y-3">
               <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2">
-                <Select placeholder="" defaultValue="normal">
-                  <SelectItem value="normal" text="Normal Text" />
-                  <SelectItem value="md" text="Markdown" />
-                </Select>
+                <Select.Root defaultValue="normal">
+                  <Select.Trigger>
+                    <Select.Value />
+                  </Select.Trigger>
+
+                  <Select.Content>
+                    <Select.Item value="normal">
+                      <Select.ItemText>Normal text</Select.ItemText>
+                    </Select.Item>
+                    <Select.Item value="md">
+                      <Select.ItemText>Markdown</Select.ItemText>
+                    </Select.Item>
+                  </Select.Content>
+                </Select.Root>
 
                 <div className="flex items-center gap-1">
                   <Button type="button" variant="ghost">
